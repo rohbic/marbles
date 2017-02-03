@@ -28,8 +28,10 @@ var fs = require('fs');
 var cors = require('cors');
 
 //// Set Server Parameters ////
-var host = setup.SERVER.HOST;
-var port = setup.SERVER.PORT;
+//var host = setup.SERVER.HOST;
+//var port = setup.SERVER.PORT;
+var host = process.env.VCAP_APP_HOST || "0.0.0.0";
+var port = process.env.PORT;
 
 ////////  Pathing and Module Setup  ////////
 app.set('views', path.join(__dirname, 'views'));
